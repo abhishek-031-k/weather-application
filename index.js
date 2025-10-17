@@ -22,7 +22,7 @@ const getCountryName = (code) => {
 const getDateTime = (dt) => {
   const curDate = new Date(dt * 1000); // Convert seconds to milliseconds
   console.log(curDate);
-  // // const date = new Date();
+  // // const date = new Date(); 
   const options = {
     weekday: "long",
     year: "numeric",
