@@ -53,7 +53,10 @@ citySearch.addEventListener("submit", (e) => {
 });
 
 const getWeatherData = async () => {
-  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9bd652e2483f703535fa6932ce22561c`;
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=9bd652e2483f703535fa6932ce22561c`;
+
+
+  
   try {
     const res = await fetch(weatherUrl);
     const data = await res.json();
@@ -67,7 +70,7 @@ const getWeatherData = async () => {
     w_forecast.innerHTML = weather[0].main;
     w_icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather[0].icon}@4x.png" />`;
 
-    w_temperature.innerHTML = `${main.temp}&#176C`;
+    w_temperature.innerHTML = `${main.temp}&#176c`;
     w_minTem.innerHTML = `Min: ${main.temp_min.toFixed()}&#176C`;
     w_maxTem.innerHTML = `Min: ${main.temp_max.toFixed()}&#176C`;
 
